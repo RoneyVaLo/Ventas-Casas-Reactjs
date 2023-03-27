@@ -1,0 +1,111 @@
+.form {
+    // background-color: #fff;
+    background: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    margin: auto;
+    width: 90%;
+    max-width: 450px;
+    padding: 2em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: .5em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &__container {
+        margin-top: 3em;
+        display: grid;
+        gap: 2.5em;
+    }
+
+    &__group {
+        position: relative;
+        --color: #5757577e;
+
+        .image {
+            border-bottom: none;
+        }
+
+        &-input {
+            width: 100%;
+            background: none;
+            color: #706c6c;
+            font-size: 1rem;
+            padding: .6em .3em;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid var(--color);
+        }
+
+        &-input:focus,
+        &-input:not(:placeholder-shown) {
+            color: #4d4646;
+        }
+
+        &-input:focus + &-label,
+        &-input:not(:placeholder-shown) + &-label {
+            transform: translateY(-12px) scale(.7);
+            transform-origin: left top;
+            color: #3866f2;
+        }
+
+        &-label {
+            
+            color: var(--color);
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 5px;
+            transform: translateY(10px);
+            transition: transform .5s, color .3s;
+        }
+
+        &-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #3866f2;
+            transform: scale(0);
+            transform: left bottom;
+            transition: transform .4s;
+        }
+
+        &-input:focus ~ &-line,
+        &-input:not(:placeholder-shown) ~ &-line {
+            transform: scale(1);
+        }
+    }
+
+    &__map {
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    &__submit {
+        background: #3866f2;
+        color: #fff;
+        font-size: 1rem;
+        //text-decoration: none;
+        //text-transform: uppercase;
+        padding: .8em 0;
+        border: none;
+        border-radius: .5em;
+
+        &:hover {
+            cursor: pointer;
+            background: #2a4ebb;
+        }
+    }
+}
+
+
